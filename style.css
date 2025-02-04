@@ -66,6 +66,6 @@ input[type="number"] {
 }
 
 /* 設定 A 和 B 表格的單元格防止換行 */
-#tableA td, #tableB td {
+#tableA td, #tableB td, #tableD td {
   white-space: nowrap; /* 防止表格中的文字換行 */
 }
