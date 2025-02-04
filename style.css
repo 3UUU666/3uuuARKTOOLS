@@ -64,8 +64,3 @@ input[type="number"] {
 #tableB td:first-child {
   white-space: nowrap; /* 防止換行 */
 }
-
-/* 防止 A 表格 和 B 表格的文本換行 */
-#tableA td, #tableB td {
-  white-space: nowrap;  /* 防止換行 */
-}
