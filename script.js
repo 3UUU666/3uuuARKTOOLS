@@ -7,7 +7,8 @@ new Vue({
       { name: '考古', blue: 10, green: 10, white: 10 },
       { name: '木頭', blue: 10, green: 10, white: 10 },
       { name: '石頭', blue: 10, green: 10, white: 10 },
-      { name: '魚', blue: 10, green: 10, white: 10 }
+      { name: '魚(綠珍珠)', blue: 10, green: 10, white: 10 },
+      { name: '狩獵(綠皮革)', blue: 10, green: 10, white: 10 }
     ]
   },
   computed: {
