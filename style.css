@@ -1,0 +1,67 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 50px;
+}
+h1 {
+  color: #333;
+}
+p {
+  font-size: 18px;
+  color: #666;
+}
+.table-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 30px;
+}
+table {
+  border-collapse: collapse;
+  width: 300px;
+}
+td {
+  border: 1px solid #000;
+  padding: 10px;
+  text-align: center;
+}
+input[type="number"] {
+  width: 50px;
+  text-align: center;
+}
+/* 設定A表格第一列寬度 */
+#tableA td:first-child {
+  width: 150px;
+  white-space: nowrap;  /* 防止換行 */
+}
+/* 不設顏色於第一行的第一列（市場價） */
+#tableA td:first-child {
+  background-color: transparent;
+}
+/* 不設顏色於第一行的第四列（白） */
+#tableA td:nth-child(4) {
+  background-color: transparent;
+}
+/* 設定第二列的背景顏色（藍） */
+#tableA td:nth-child(2) {
+  background-color: #b3d9ff; /* 淡藍色 */
+}
+/* 設定第三列的背景顏色（綠） */
+#tableA td:nth-child(3) {
+  background-color: #b3ffb3; /* 淡綠色 */
+}
+
+/* 設定B表格的顏色配置 */
+#tableB td:nth-child(2) {
+  background-color: #b3d9ff; /* 淡藍色 */
+}
+#tableB td:nth-child(3) {
+  background-color: #b3ffb3; /* 淡綠色 */
+}
+#tableB td:nth-child(4) {
+  background-color: transparent;
+}
+
+#tableA td, #tableB td {
+  white-space: nowrap;  /* 防止換行 */
+}
