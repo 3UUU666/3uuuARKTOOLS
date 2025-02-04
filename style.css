@@ -64,3 +64,8 @@ input[type="number"] {
 #tableA td:nth-child(3), #tableB td:nth-child(3) { 
   background-color: #b3ffb3; /* 設定 A 和 B 表格第三列（綠色）的背景顏色為淡綠色 */
 }
+
+/* 設定 A 和 B 表格的單元格防止換行 */
+#tableA td, #tableB td {
+  white-space: nowrap; /* 防止表格中的文字換行 */
+}
