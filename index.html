@@ -36,6 +36,12 @@
             width: 50px;
             text-align: center;
         }
+        .row-light-blue {
+            background-color: #b3d9ff;
+        }
+        .row-light-green {
+            background-color: #b3ffb3;
+        }
     </style>
 </head>
 <body>
@@ -43,101 +49,133 @@
     <p>這是一個簡單的網頁範例，供您參考。</p>
 
     <div class="table-container">
-        <!-- 第一個7x4表格 -->
-        <table>
+        <!-- 第一個A表格（7x4） -->
+        <table id="tableA">
             <tbody>
                 <tr>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
+                    <td>市場價</td>
+                    <td>藍</td>
+                    <td>綠</td>
+                    <td>白</td>
+                </tr>
+                <tr class="row-light-blue">
+                    <td>花</td>
+                    <td><input type="number" onchange="updateB()" /></td>
+                    <td><input type="number" onchange="updateB()" /></td>
+                    <td><input type="number" onchange="updateB()" /></td>
+                </tr>
+                <tr class="row-light-green">
+                    <td>香菇</td>
+                    <td><input type="number" onchange="updateB()" /></td>
+                    <td><input type="number" onchange="updateB()" /></td>
+                    <td><input type="number" onchange="updateB()" /></td>
                 </tr>
                 <tr>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
+                    <td>考古</td>
+                    <td><input type="number" onchange="updateB()" /></td>
+                    <td><input type="number" onchange="updateB()" /></td>
+                    <td><input type="number" onchange="updateB()" /></td>
                 </tr>
                 <tr>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
+                    <td>木頭</td>
+                    <td><input type="number" onchange="updateB()" /></td>
+                    <td><input type="number" onchange="updateB()" /></td>
+                    <td><input type="number" onchange="updateB()" /></td>
                 </tr>
                 <tr>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
+                    <td>石頭</td>
+                    <td><input type="number" onchange="updateB()" /></td>
+                    <td><input type="number" onchange="updateB()" /></td>
+                    <td><input type="number" onchange="updateB()" /></td>
                 </tr>
                 <tr>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                </tr>
-                <tr>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                </tr>
-                <tr>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
+                    <td>魚</td>
+                    <td><input type="number" onchange="updateB()" /></td>
+                    <td><input type="number" onchange="updateB()" /></td>
+                    <td><input type="number" onchange="updateB()" /></td>
                 </tr>
             </tbody>
         </table>
 
-        <!-- 第二個7x4表格 -->
-        <table>
+        <!-- 第二個B表格（7x4）-->
+        <table id="tableB">
             <tbody>
                 <tr>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
+                    <td>成本/個</td>
+                    <td>藍</td>
+                    <td>綠</td>
+                    <td>白</td>
+                </tr>
+                <tr class="row-light-blue">
+                    <td>花</td>
+                    <td id="b-flower-blue">0</td>
+                    <td id="b-flower-green">0</td>
+                    <td id="b-flower-white">0</td>
+                </tr>
+                <tr class="row-light-green">
+                    <td>香菇</td>
+                    <td id="b-mushroom-blue">0</td>
+                    <td id="b-mushroom-green">0</td>
+                    <td id="b-mushroom-white">0</td>
                 </tr>
                 <tr>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
+                    <td>考古</td>
+                    <td id="b-archaeology-blue">0</td>
+                    <td id="b-archaeology-green">0</td>
+                    <td id="b-archaeology-white">0</td>
                 </tr>
                 <tr>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
+                    <td>木頭</td>
+                    <td id="b-wood-blue">0</td>
+                    <td id="b-wood-green">0</td>
+                    <td id="b-wood-white">0</td>
                 </tr>
                 <tr>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
+                    <td>石頭</td>
+                    <td id="b-stone-blue">0</td>
+                    <td id="b-stone-green">0</td>
+                    <td id="b-stone-white">0</td>
                 </tr>
                 <tr>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                </tr>
-                <tr>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                </tr>
-                <tr>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
-                    <td><input type="number" /></td>
+                    <td>魚</td>
+                    <td id="b-fish-blue">0</td>
+                    <td id="b-fish-green">0</td>
+                    <td id="b-fish-white">0</td>
                 </tr>
             </tbody>
         </table>
     </div>
+
+    <script>
+        function updateB() {
+            const tableA = document.getElementById('tableA');
+            const inputs = tableA.getElementsByTagName('input');
+            
+            // 更新 B 表格的數值
+            document.getElementById('b-flower-blue').innerText = inputs[1].value ? (inputs[1].value / 10).toFixed(2) : 0;
+            document.getElementById('b-flower-green').innerText = inputs[2].value ? (inputs[2].value / 10).toFixed(2) : 0;
+            document.getElementById('b-flower-white').innerText = inputs[3].value ? (inputs[3].value / 100).toFixed(2) : 0;
+
+            document.getElementById('b-mushroom-blue').innerText = inputs[5].value ? (inputs[5].value / 10).toFixed(2) : 0;
+            document.getElementById('b-mushroom-green').innerText = inputs[6].value ? (inputs[6].value / 10).toFixed(2) : 0;
+            document.getElementById('b-mushroom-white').innerText = inputs[7].value ? (inputs[7].value / 100).toFixed(2) : 0;
+
+            document.getElementById('b-archaeology-blue').innerText = inputs[9].value ? (inputs[9].value / 10).toFixed(2) : 0;
+            document.getElementById('b-archaeology-green').innerText = inputs[10].value ? (inputs[10].value / 10).toFixed(2) : 0;
+            document.getElementById('b-archaeology-white').innerText = inputs[11].value ? (inputs[11].value / 100).toFixed(2) : 0;
+
+            document.getElementById('b-wood-blue').innerText = inputs[13].value ? (inputs[13].value / 10).toFixed(2) : 0;
+            document.getElementById('b-wood-green').innerText = inputs[14].value ? (inputs[14].value / 10).toFixed(2) : 0;
+            document.getElementById('b-wood-white').innerText = inputs[15].value ? (inputs[15].value / 100).toFixed(2) : 0;
+
+            document.getElementById('b-stone-blue').innerText = inputs[17].value ? (inputs[17].value / 10).toFixed(2) : 0;
+            document.getElementById('b-stone-green').innerText = inputs[18].value ? (inputs[18].value / 10).toFixed(2) : 0;
+            document.getElementById('b-stone-white').innerText = inputs[19].value ? (inputs[19].value / 100).toFixed(2) : 0;
+
+            document.getElementById('b-fish-blue').innerText = inputs[21].value ? (inputs[21].value / 10).toFixed(2) : 0;
+            document.getElementById('b-fish-green').innerText = inputs[22].value ? (inputs[22].value / 10).toFixed(2) : 0;
+            document.getElementById('b-fish-white').innerText = inputs[23].value ? (inputs[23].value / 100).toFixed(2) : 0;
+        }
+    </script>
 </body>
 </html>
