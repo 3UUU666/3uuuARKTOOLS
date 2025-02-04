@@ -9,44 +9,39 @@
 <body>
 <!-- partial:index.partial.html -->
 <div id="app">
-  <h1>直接填市價 不用自己換算數量 會自動換算</h1>
-  <p>有問題再說</p>
-
+  <h1>直接填市價，不用自己換算數量，會自動換算</h1>
+  
   <div class="table-container">
-    <!-- 第一個A表格（7x4） -->
+    <!-- A 表格 -->
     <table id="tableA">
-      <tbody>
-        <tr>
-          <td>市價</td>
-          <td>藍</td>
-          <td>綠</td>
-          <td>白</td>
-        </tr>
-        <tr v-for="(item, index) in items" :key="index">
-          <td>{{ item.name }}</td>
-          <td><input v-model="item.blue" type="number" @input="updateB" /></td>
-          <td><input v-model="item.green" type="number" @input="updateB" /></td>
-          <td><input v-model="item.white" type="number" @input="updateB" /></td>
-        </tr>
-      </tbody>
+      <tr>
+        <td>市價</td>
+        <td>藍</td>
+        <td>綠</td>
+        <td>白</td>
+      </tr>
+      <tr v-for="(item, index) in items" :key="index">
+        <td>{{ item.name }}</td>
+        <td><input type="number" v-model.number="item.blue"></td>
+        <td><input type="number" v-model.number="item.green"></td>
+        <td><input type="number" v-model.number="item.white"></td>
+      </tr>
     </table>
 
-    <!-- 第二個B表格（7x4）-->
+    <!-- B 表格 -->
     <table id="tableB">
-      <tbody>
-        <tr>
-          <td>成本/個</td>
-          <td>藍</td>
-          <td>綠</td>
-          <td>白</td>
-        </tr>
-        <tr v-for="(item, index) in items" :key="index">
-          <td>{{ item.name }}</td>
-          <td>{{ calculateCost(item.blue) }}</td>
-          <td>{{ calculateCost(item.green) }}</td>
-          <td>{{ calculateCost(item.white) }}</td>
-        </tr>
-      </tbody>
+      <tr>
+        <td>成本/個</td>
+        <td>藍</td>
+        <td>綠</td>
+        <td>白</td>
+      </tr>
+      <tr v-for="(item, index) in computedItems" :key="'b-' + index">
+        <td>{{ item.name }}</td>
+        <td>{{ item.blue }}</td>
+        <td>{{ item.green }}</td>
+        <td>{{ item.white }}</td>
+      </tr>
     </table>
   </div>
 </div>
