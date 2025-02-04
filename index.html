@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>簡單網頁</title>
-    <style>
+<style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -36,15 +36,25 @@
             width: 50px;
             text-align: center;
         }
-        .row-light-blue {
-            background-color: #b3d9ff; /* 淡藍色 */
-        }
-        .row-light-green {
-            background-color: #b3ffb3; /* 淡綠色 */
-        }
         /* 設定A表格第一列寬度 */
         #tableA td:first-child {
-            width: 200px; /* 調整市場價的寬度 */
+            width: 150px;
+        }
+        /* 不設顏色於第一行的第一列（市場價） */
+        #tableA td:first-child {
+            background-color: transparent;
+        }
+        /* 不設顏色於第一行的第四列（白） */
+        #tableA td:nth-child(4) {
+            background-color: transparent;
+        }
+        /* 設定第二列的背景顏色（藍） */
+        #tableA td:nth-child(2) {
+            background-color: #b3d9ff; /* 淡藍色 */
+        }
+        /* 設定第三列的背景顏色（綠） */
+        #tableA td:nth-child(3) {
+            background-color: #b3ffb3; /* 淡綠色 */
         }
     </style>
 </head>
@@ -53,13 +63,13 @@
     <p>這是一個簡單的網頁範例，供您參考。</p>
 
     <div class="table-container">
-        <!-- 第一個A表格（7x4） -->
+ <!-- 第一個A表格（7x4） -->
         <table id="tableA">
             <tbody>
                 <tr>
                     <td>市場價</td>
-                    <td class="row-light-blue">藍</td>
-                    <td class="row-light-green">綠</td>
+                    <td>藍</td>
+                    <td>綠</td>
                     <td>白</td>
                 </tr>
                 <tr>
