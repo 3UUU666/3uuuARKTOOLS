@@ -72,23 +72,23 @@
       <td>製作手續費</td>
       <td>數量</td>
       <td>製作成本/個</td>
-      <td>上架手續費</td>
+      <td>上架手續費/個</td>
       <td>總成本/個</td>
       <td>市價</td>
       <td>利潤/個</td>
     </tr>
     <tr v-for="(row, index) in cItems" :key="index">
     <td>{{ row.name }}</td>
-    <!-- 材料價格輸入框，每次輸入數字時就會執行 updateCTable() 計算 -->
-    <td><input type="number" v-model.number="row.material1" @input="updateCTable()"></td>
-    <td><input type="number" v-model.number="row.material2" @input="updateCTable()"></td>
-    <td><input type="number" v-model.number="row.material3" @input="updateCTable()"></td>
-    <td><input type="number" v-model.number="row.material4" @input="updateCTable()"></td>
-    <td><input type="number" v-model.number="row.material5" @input="updateCTable()"></td>
+    <!-- 材料1-5的計算結果 -->
+      <td>{{ row.material1 }}</td>
+      <td>{{ row.material2 }}</td>
+      <td>{{ row.material3 }}</td>
+      <td>{{ row.material4 }}</td>
+      <td>{{ row.material5 }}</td>
     <!-- 計算出的 製作手續費，不可手動輸入 -->
     <td>{{ row.productionFee }}</td>
     <!-- 設定製作數量 -->
-    <td><input type="number" v-model.number="row.quantity" @input="updateCTable()"></td>
+    <td><span>{{ row.quantity }}</span></td>
     <!-- 計算出的 製作成本/個，不可手動輸入 -->
     <td>{{ row.productionCostPerUnit }}</td>
     <!-- 計算出的 上架手續費，不可手動輸入 -->
