@@ -49,7 +49,7 @@
 <!-- D表格 -->
     <table id="tableD">
       <tr>
-        <td></td>
+        <td>特殊</td>
         <td>減少X%</td>
       </tr>
   <tr>
@@ -58,6 +58,21 @@
     <td><input type="number" v-model="itemsD[0].X" @input="updateCTable()" /></td>
   </tr>
     </table>
+    
+    <!-- E表格 -->
+    <table id="tableE">
+      <tr>
+        <td>戰鬥用品</td>
+        <td>減少X%</td>
+      </tr>
+	    <tr>
+    <td>{{ itemsE[0].name }}</td>
+    <!-- 確保 Y 的數值變動時會更新 F 表格 -->
+    <td><input type="number" v-model="itemsE[0].Y" @input="updateFTable()" /></td>
+  </tr>
+      </table>
+   
+    
   </div>
 
   <!-- C 表格 (位於 ABD 下面) -->
@@ -101,6 +116,49 @@
     <td>{{ row.profit }}</td>
   </tr>
   </table>
+  
+  <!-- F 表格 (位於 C表格 下面) -->
+  <table id="tableF">
+    <tr>
+      <td></td>
+      <td>材料1</td>
+      <td>材料2</td>
+      <td>材料3</td>
+      <td>材料4</td>
+      <td>材料5</td>
+      <td>製作手續費</td>
+      <td>數量</td>
+      <td>製作成本/個</td>
+      <td>上架手續費/個</td>
+      <td>總成本/個</td>
+      <td>市價</td>
+      <td>利潤/個</td>
+    </tr>
+    <tr v-for="(row, index) in fItems" :key="index">
+    <td>{{ row.name }}</td>
+    <!-- 材料1-5的計算結果 -->
+      <td>{{ row.material1 }}</td>
+      <td>{{ row.material2 }}</td>
+      <td>{{ row.material3 }}</td>
+      <td>{{ row.material4 }}</td>
+      <td>{{ row.material5 }}</td>
+    <!-- 計算出的 製作手續費，不可手動輸入 -->
+    <td>{{ row.productionFee }}</td>
+    <!-- 設定製作數量 -->
+    <td><span>{{ row.quantity }}</span></td>
+    <!-- 計算出的 製作成本/個，不可手動輸入 -->
+    <td>{{ row.productionCostPerUnit }}</td>
+    <!-- 計算出的 上架手續費，不可手動輸入 -->
+    <td>{{ row.listingFee }}</td>
+    <!-- 計算出的 總成本，不可手動輸入 -->
+    <td>{{ row.totalCost }}</td>
+    <!-- 市價輸入框 -->
+    <td><input type="number" v-model.number="row.marketPrice" @input="updateFTable()"></td>
+    <!-- 計算出的 利潤，不可手動輸入 -->
+    <td>{{ row.profit }}</td>
+  </tr>
+  </table>
+
 </div>
 <!-- partial -->
   <script src='https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js'></script><script  src="./script.js"></script>

@@ -41,9 +41,19 @@ table {
   width: 150px;
 }
 
+/* 設定 E 表格的寬度，使它比 A 和 B 小 */
+#tableE {
+  width: 150px;
+}
+
 /* 設定 C 表格的樣式，使其顯示在 ABD 下方 */
 #tableC {
-  width: 1000px;
+  width: 1250px;
+  margin: 20px auto; /* 讓 C 表格置中並與上方表格間距 20px */
+}
+
+  #tableF {
+  width: 1250px;
   margin: 20px auto; /* 讓 C 表格置中並與上方表格間距 20px */
 }
 
@@ -72,18 +82,40 @@ input[type="number"] {
 }
 
 /* 設定 A、B、D、C 表格的單元格防止換行 */
-#tableA td, #tableB td, #tableD td, #tableC td {
+#tableA td, #tableB td, #tableD td,#tableE td,#tableC td,#tableE td,#tableF td {
   white-space: nowrap;
 }
 
-/* 設定 C 表格的背景顏色 */
+/* 設定 C 表格中，除了第一欄以外的所有欄位背景顏色 */
 #tableC td:nth-child(2), #tableC td:nth-child(3), #tableC td:nth-child(4),
 #tableC td:nth-child(5), #tableC td:nth-child(6), #tableC td:nth-child(7),
 #tableC td:nth-child(8), #tableC td:nth-child(9), #tableC td:nth-child(10),
 #tableC td:nth-child(11), #tableC td:nth-child(12), #tableC td:nth-child(13) {
-  background-color: #f2f2f2;
+  background-color: #f2f2f2;/* 設定背景顏色為淺灰色 */
 }
 
+/* 設定 C 表格中的第一欄背景顏色 */
 #tableC td:nth-child(1) {
-  background-color: #b3d9ff;
+  background-color: #b3d9ff; /* 設定第一欄的背景顏色為藍色 */
 }
+
+/* 設定 F 表格每個單元格的樣式 */
+#tableF td {
+  border: 1px solid #000; /* 設定邊框 */
+  padding: 8px; /* 設定內邊距 */
+  text-align: center; /* 讓文字置中 */
+  overflow: hidden; /* 超出內容不顯示 */
+  text-overflow: ellipsis; /* 溢出時顯示省略號 */
+}
+
+/* 設定 F 表格中，除了第一欄以外的所有欄位背景顏色 */
+#tableF td:nth-child(2), #tableF td:nth-child(3), #tableF td:nth-child(4),
+#tableF td:nth-child(5), #tableF td:nth-child(6), #tableF td:nth-child(7),
+#tableF td:nth-child(8), #tableF td:nth-child(9), #tableF td:nth-child(10),
+#tableF td:nth-child(11), #tableF td:nth-child(12), #tableF td:nth-child(13) {
+  background-color: #f2f2f2;/* 設定背景顏色為淺灰色 */
+}
+
+/* 設定 F 表格中的第一欄背景顏色 */
+#tableF td:nth-child(1) {
+  background-color: #b3d9ff; /* 設定第一欄的背景顏色為藍色 */
